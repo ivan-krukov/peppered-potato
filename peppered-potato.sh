@@ -23,6 +23,7 @@ if [ -n "${name:+1}" ] ; then
   # Copy the skeleton and template strings
 
   cp -r $DIR/skeleton $targetdir/$name
+  sed -i "s/{{NAME}}/$name/" $targetdir/$name/.gitignore
   sed -i "s/{{NAME}}/$name/" $targetdir/$name/makefile
   sed -i "s/{{NAME}}/$name/" $targetdir/$name/README.md
 
