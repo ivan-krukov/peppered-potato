@@ -1,7 +1,7 @@
 {{NAME}}:
-				#make me!
+	#make me!
 
 .PHONY: clean
 
 clean:
-				rm build/*
+	rm build/*
