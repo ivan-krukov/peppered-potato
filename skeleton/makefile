@@ -5,3 +5,4 @@
 
 clean:
 	rm build/*
+	rm {{NAME}}
