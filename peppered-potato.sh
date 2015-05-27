@@ -3,6 +3,9 @@ name=$1
 targetdir=$2
 author=$USER
 
+#Directory of the script
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 if [ -n "${name:+1}" ] ; then
 
   # Use current directory if nothing else specified
@@ -19,7 +22,7 @@ if [ -n "${name:+1}" ] ; then
 
   # Copy the skeleton and template strings
 
-  cp -r skeleton $targetdir/$name
+  cp -r $DIR/skeleton $targetdir/$name
   sed -i "s/{{NAME}}/$name/" $targetdir/$name/makefile
   sed -i "s/{{NAME}}/$name/" $targetdir/$name/README.md
 
