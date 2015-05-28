@@ -24,10 +24,8 @@ if [ -n "${name:+1}" ] ; then
 
   cp -r $DIR/skeleton $targetdir/$name
 
-  #there has to be a better way to do it
-  sed -i "s/{{NAME}}/$name/" $targetdir/$name/.gitignore
-  sed -i "s/{{NAME}}/$name/" $targetdir/$name/makefile
-  sed -i "s/{{NAME}}/$name/" $targetdir/$name/README.md
+  #templating all the files
+  sed -i "s/{{NAME}}/$name/" `$targetdir/$name/ -type f`
 
   echo "Created $targetdir/$name"
 
