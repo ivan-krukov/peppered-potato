@@ -1,7 +1,12 @@
+.PHONY: clean pre
+
+all: pre {{NAME}}
+
 {{NAME}}:
 	#make me!
 
-.PHONY: clean
+pre:
+	mkdir -p build/
 
 clean:
 	rm build/*
